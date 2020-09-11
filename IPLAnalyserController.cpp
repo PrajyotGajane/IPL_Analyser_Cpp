@@ -15,6 +15,7 @@ enum SortChoice
     FOURS_AND_SIXES,
     STRIKE_RATE_WITH_FOURS_SIXES,
     AVERAGE_WITH_STRIKE_RATE,
+    RUNS_WITH_AVERAGE,
     EXIT = 20
 };
 
@@ -75,7 +76,14 @@ public:
                     cout << "\nPlayer with highest Average along with Strike rate \n";
                     user_input_output.displayData(sorted_list);   
                     break;   
-                     
+
+                case RUNS_WITH_AVERAGE:
+                    ipl_analyser.loadIPLData(BATSMAN_FILE_PATH);
+                    sorted_list = ipl_analyser.getSortedData(&compareRunsWithAverage);
+                    cout << "\nPlayer with highest Runs along with average \n";
+                    user_input_output.displayData(sorted_list);   
+                    break;  
+
                 case EXIT:
                     break_loop = false;
                     break;

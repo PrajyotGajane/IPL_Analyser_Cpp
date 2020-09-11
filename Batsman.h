@@ -34,4 +34,5 @@ public:
     int getSixes();
     double getStrikeRate();
     int getFoursAndSixes();
+    int getRuns();
 };

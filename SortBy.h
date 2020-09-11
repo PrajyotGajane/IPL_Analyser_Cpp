@@ -27,3 +27,8 @@ bool compareByAverageWithStrikeRate(Batsman *sr_with_avg_1, Batsman *sr_with_avg
 { 
     return (sr_with_avg_1->getAverage() > sr_with_avg_2->getAverage()) && (sr_with_avg_1->getStrikeRate() > sr_with_avg_2->getStrikeRate());
 }
+
+bool compareRunsWithAverage(Batsman *runs_with_avg_1, Batsman *runs_with_avg_2) 
+{ 
+    return (runs_with_avg_1->getRuns() > runs_with_avg_2->getRuns()) && (runs_with_avg_1->getAverage() > runs_with_avg_2->getAverage());
+}

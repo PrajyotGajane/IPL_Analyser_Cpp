@@ -13,7 +13,8 @@ void Batsman::display()
     cout << "   Average : " << this->average << "\t";
     cout << "   Strike Rate : " << this->SR << "\t";
     cout << "   4's : " << this->fours << "\t";
-    cout << "   6's : " << this->sixes << "\n";
+    cout << "   6's : " << this->sixes << "\t";
+    cout << "   Runs : " << this->runs << "\n";
 }
 
 string *Batsman::getPosition()
@@ -36,8 +37,14 @@ int Batsman::getSixes()
     return stringToInteger(this->sixes);
 }
 
-int Batsman::getFoursAndSixes() {
+int Batsman::getFoursAndSixes()
+{
     return getFours() + getSixes();
+}
+
+int Batsman::getRuns()
+{
+    return stringToInteger(this->runs);
 }
 
 double Batsman::stringTODouble(string value_to_convert)
