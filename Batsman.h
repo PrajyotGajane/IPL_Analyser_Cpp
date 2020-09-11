@@ -29,5 +29,9 @@ public:
     double getAverage();
     void display();
     double stringTODouble(string);
+    int stringToInteger(string);
+    int getFours();
+    int getSixes();
     double getStrikeRate();
+    int getFoursAndSixes();
 };

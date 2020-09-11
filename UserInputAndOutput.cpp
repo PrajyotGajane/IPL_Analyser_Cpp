@@ -6,11 +6,11 @@ int UserInputAndOutput::selectField()
 {
     int choice;
     cout << "\nSort" << endl;
-    cout << "\n1: Average  2: Strike Rate  20: Exit"
+    cout << "\n1: Average  2: Strike Rate  3: 4's and 6's  20: Exit"
          << endl;
     cout << "Your input : ";
     cin >> choice;
-    cout << "\n========================================";
+    cout << "\n================================================";
     return choice;
 }
 
@@ -20,5 +20,6 @@ void UserInputAndOutput::displayData(vector<Batsman *> ipl_data)
     {
         cout << "\n";
         (*iterator)->display();
+        cout << "\n================================================";
     }
 }
