@@ -6,7 +6,7 @@ int UserInputAndOutput::selectField()
 {
     int choice;
     cout << "\nSort" << endl;
-    cout << "\n1: Average  2: Strike Rate  3: 4's and 6's  20: Exit"
+    cout << "\n1: Average  2: Strike Rate  3: 4's and 6's  \n4: Strike Rate 4's and 6's   20: Exit"
          << endl;
     cout << "Your input : ";
     cin >> choice;

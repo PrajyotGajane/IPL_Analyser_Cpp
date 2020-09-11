@@ -13,6 +13,7 @@ enum SortChoice
     AVERAGE = 1,
     STRIKE_RATE,
     FOURS_AND_SIXES,
+    STRIKE_RATE_WITH_FOURS_SIXES,
     EXIT = 20
 };
 
@@ -58,6 +59,13 @@ public:
                     sorted_list = ipl_analyser.getSortedData(&compareByFoursAndSixes);
                     cout << "\nPlayer with highest Fours and Sixes \n";
                     user_input_output.displayData(sorted_list);
+                    break;
+
+                case STRIKE_RATE_WITH_FOURS_SIXES:
+                    ipl_analyser.loadIPLData(BATSMAN_FILE_PATH);
+                    sorted_list = ipl_analyser.getSortedData(&compareByStrikeRateWithFourAndSix);
+                    cout << "\nPlayer with highest Strike rate along with Fours and Sixes \n";
+                    user_input_output.displayData(sorted_list);   
                     break;
                     
                 case EXIT:
