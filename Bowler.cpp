@@ -11,6 +11,11 @@ double Bowler::getAverage()
     return stringTODouble(this->average);
 }
 
+double Bowler::getStrikeRate()
+{
+    return stringTODouble(this->strike_rate);
+}
+
 void Bowler::display()
 {
     cout << "Name : " << this->player << "\t";

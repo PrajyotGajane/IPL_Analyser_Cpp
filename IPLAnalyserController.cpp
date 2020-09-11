@@ -18,6 +18,7 @@ enum SortChoice
     AVERAGE_WITH_STRIKE_RATE,
     RUNS_WITH_AVERAGE,
     AVERAGE_BOWLER,
+    STRIKE_RATE_BOWLER,
     EXIT = 20
 };
 
@@ -95,6 +96,12 @@ public:
                     user_input_output.displayBowlerData(sorted_bowler_list); 
                     break;
 
+                case STRIKE_RATE_BOWLER:
+                    ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
+                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRate);
+                    cout << "\nBowler with highest strike rate \n";
+                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    break;
                 case EXIT:
                     break_loop = false;
                     break;
