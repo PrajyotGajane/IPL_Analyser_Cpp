@@ -19,6 +19,7 @@ enum SortChoice
     RUNS_WITH_AVERAGE,
     AVERAGE_BOWLER,
     STRIKE_RATE_BOWLER,
+    ECONOMY_RATE,
     EXIT = 20
 };
 
@@ -102,6 +103,14 @@ public:
                     cout << "\nBowler with highest strike rate \n";
                     user_input_output.displayBowlerData(sorted_bowler_list); 
                     break;
+
+                case ECONOMY_RATE:
+                    ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
+                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByEconRate);
+                    cout << "\nBowler with highest economy rate \n";
+                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    break;
+
                 case EXIT:
                     break_loop = false;
                     break;

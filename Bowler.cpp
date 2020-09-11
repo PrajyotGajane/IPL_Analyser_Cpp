@@ -16,10 +16,17 @@ double Bowler::getStrikeRate()
     return stringTODouble(this->strike_rate);
 }
 
+double Bowler::getEconRate()
+{
+    return stringTODouble(this->Econ);
+}
+
 void Bowler::display()
 {
     cout << "Name : " << this->player << "\t";
-    cout << "   Average : " << this->average << "\n";
+    cout << "   Average : " << this->average << "\t";
+    cout << "   Strike Rate: " << this->strike_rate << "\t";
+    cout << "   Economy : " << this->Econ << "\n"; 
 }
 
 double Bowler::stringTODouble(string value_to_convert)

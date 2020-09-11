@@ -8,7 +8,8 @@ int UserInputAndOutput::selectField()
     cout << "\nSort" << endl;
     cout << "\n1: Average  2: Strike Rate  3: 4's and 6's";
     cout << "\n4: Strike Rate and 4's and 6's  5: Average with strike rate  6: Max Runs with Average";
-    cout << "\n7: Bolwers Average  8:Bowlers Strike Rate   20: Exit"
+    cout << "\n7: Bolwers Average  8: Bowlers Strike Rate   9: Bowlers Economy Rate";
+    cout << "\n20:Exit"
          << endl;
     cout << "Your input : ";     
     cin >> choice;

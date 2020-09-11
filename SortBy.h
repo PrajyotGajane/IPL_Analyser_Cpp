@@ -39,3 +39,8 @@ bool compareBowlerByAverage(Bowler *avg_1, Bowler *avg_2)
 {
     return avg_1->getAverage() > avg_2->getAverage();
 }
+
+bool compareByEconRate(Bowler *econ_1, Bowler *econ_2)
+{
+    return econ_1->getEconRate() > econ_2->getEconRate();
+}

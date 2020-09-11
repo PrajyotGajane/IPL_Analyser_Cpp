@@ -29,4 +29,5 @@ public:
     void display();
     double getStrikeRate();
     double stringTODouble(string);
+    double getEconRate();
 };
