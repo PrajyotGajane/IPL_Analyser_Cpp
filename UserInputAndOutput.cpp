@@ -6,10 +6,11 @@ int UserInputAndOutput::selectField()
 {
     int choice;
     cout << "\nSort" << endl;
-    cout << "\n1: Average\n"
+    cout << "\n1: Average  2: Strike Rate  20: Exit"
          << endl;
     cout << "Your input : ";
     cin >> choice;
+    cout << "\n========================================";
     return choice;
 }
 

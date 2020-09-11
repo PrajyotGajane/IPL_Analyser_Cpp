@@ -10,7 +10,9 @@ string BATSMAN_FILE_PATH = "MostRuns.csv";
 
 enum SortChoice
 {
-    AVERAGE = 1
+    AVERAGE = 1,
+    STRIKE_RATE,
+    EXIT = 20
 };
 
 void displayWelcomeMessage()
@@ -30,19 +32,35 @@ class IPLAnalyserController
 public:
     void performTask()
     {
-        choice = user_input_output.selectField();
-        switch (choice)
+        bool break_loop = true;
+        while (break_loop)
         {
-            case AVERAGE:
-                ipl_analyser.loadIPLData(BATSMAN_FILE_PATH);
-                sorted_list = ipl_analyser.getSortedData(&compareByAverage);
-                break;
+            choice = user_input_output.selectField();
+            switch (choice)
+            {
+                case AVERAGE:
+                    ipl_analyser.loadIPLData(BATSMAN_FILE_PATH);
+                    sorted_list = ipl_analyser.getSortedData(&compareByAverage);
+                    cout << "\nPlayer with highest average \n";
+                    user_input_output.displayData(sorted_list);
+                    break;
 
-            default:
-                cout << "Invalid Input" << endl;
-                break;
+                case STRIKE_RATE:
+                    ipl_analyser.loadIPLData(BATSMAN_FILE_PATH);
+                    sorted_list = ipl_analyser.getSortedData(&compareByStrikeRate);
+                    cout << "\nPlayer with highest strike rate \n";
+                    user_input_output.displayData(sorted_list);
+                    break;
+
+                case EXIT:
+                    break_loop = false;
+                    break;
+
+                default:
+                    cout << "Invalid Input" << endl;
+                    break;
+            }
         }
-        user_input_output.displayData(sorted_list);
     }
 };
 

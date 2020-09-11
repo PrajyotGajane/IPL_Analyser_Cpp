@@ -28,4 +28,6 @@ public:
     string *getPosition();
     double getAverage();
     void display();
+    double stringTODouble(string);
+    double getStrikeRate();
 };
