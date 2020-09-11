@@ -44,3 +44,8 @@ bool compareByEconRate(Bowler *econ_1, Bowler *econ_2)
 {
     return econ_1->getEconRate() > econ_2->getEconRate();
 }
+
+bool compareByStrikeRateWithFourAndFiveWickets(Bowler *sr_four_five_1, Bowler *sr_four_five_2)
+{
+    return (sr_four_five_1->getFourAndFiveWickets() > sr_four_five_2->getFourAndFiveWickets()) && (sr_four_five_1->getStrikeRate() < sr_four_five_2->getStrikeRate());
+}

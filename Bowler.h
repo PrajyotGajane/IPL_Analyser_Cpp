@@ -27,7 +27,11 @@ public:
     string *getPosition();
     double getAverage();
     void display();
+    int getFourWickets();
+    int getFiveWickets();
+    int getFourAndFiveWickets();
     double getStrikeRate();
     double stringTODouble(string);
     double getEconRate();
+    int stringToInteger(string);
 };
