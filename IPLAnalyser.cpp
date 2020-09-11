@@ -1,25 +1,25 @@
 #include <iostream>
 #include <vector>
-#include "Batsman.h"
-#include "CSVParser.cpp"
+#include "IPLAdaptorFactory.cpp"
 #include <algorithm>
 using namespace std;
 
+template <class T>
 class IPLAnalyser
 {
 private:
-    vector<Batsman *> ipl_batsman_data;
+    vector<T *> ipl_data;
 
 public:
     void loadIPLData(string csv_file_path)
     {
-        CSVParser<Batsman> csv_parser_obj;
-        ipl_batsman_data = csv_parser_obj.readDataFromFile(csv_file_path);
+        IPLAdaptorFactory<T> adaptor;
+        ipl_data = adaptor.getIPLAdaptor(csv_file_path);
     }
 
-    vector<Batsman *> getSortedData(bool (*sortFunc)(Batsman *, Batsman *))
+    vector<T *> getSortedData(bool (*sortFunc)(T *, T *))
     {
-        vector<Batsman *> sorted_list = ipl_batsman_data;
+        vector<T *> sorted_list = ipl_data;
         sort(sorted_list.begin() + 1, sorted_list.end(), sortFunc);
         return sorted_list;
     }

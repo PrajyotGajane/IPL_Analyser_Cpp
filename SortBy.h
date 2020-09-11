@@ -1,5 +1,6 @@
 #pragma once
 #include "Batsman.h"
+#include "Bowler.h"
 
 using namespace std;
 
@@ -31,4 +32,9 @@ bool compareByAverageWithStrikeRate(Batsman *sr_with_avg_1, Batsman *sr_with_avg
 bool compareRunsWithAverage(Batsman *runs_with_avg_1, Batsman *runs_with_avg_2) 
 { 
     return (runs_with_avg_1->getRuns() > runs_with_avg_2->getRuns()) && (runs_with_avg_1->getAverage() > runs_with_avg_2->getAverage());
+}
+
+bool compareBowlerByAverage(Bowler *avg_1, Bowler *avg_2)
+{
+    return avg_1->getAverage() > avg_2->getAverage();
 }
