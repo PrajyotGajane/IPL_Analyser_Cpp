@@ -11,7 +11,9 @@ void Batsman::display()
 {
     cout << "Name : " << this->player << "\t";
     cout << "   Average : " << this->average << "\t";
-    cout << "   Strike Rate : " << this->SR << "\n";
+    cout << "   Strike Rate : " << this->SR << "\t";
+    cout << "   4's : " << this->fours << "\t";
+    cout << "   6's : " << this->sixes << "\n";
 }
 
 string *Batsman::getPosition()
@@ -37,6 +39,7 @@ int Batsman::getSixes()
 int Batsman::getFoursAndSixes() {
     return getFours() + getSixes();
 }
+
 double Batsman::stringTODouble(string value_to_convert)
 {
     std::stringstream ss;

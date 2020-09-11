@@ -22,3 +22,8 @@ bool compareByStrikeRateWithFourAndSix(Batsman *sr_fours_sixes_1, Batsman *sr_fo
 { 
     return (sr_fours_sixes_1->getFoursAndSixes() > sr_fours_sixes_2->getFoursAndSixes()) && (sr_fours_sixes_1->getStrikeRate() > sr_fours_sixes_2->getStrikeRate());
 }
+
+bool compareByAverageWithStrikeRate(Batsman *sr_with_avg_1, Batsman *sr_with_avg_2) 
+{ 
+    return (sr_with_avg_1->getAverage() > sr_with_avg_2->getAverage()) && (sr_with_avg_1->getStrikeRate() > sr_with_avg_2->getStrikeRate());
+}
