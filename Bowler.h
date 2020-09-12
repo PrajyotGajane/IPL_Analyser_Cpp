@@ -33,5 +33,6 @@ public:
     double getStrikeRate();
     double stringTODouble(string);
     double getEconRate();
+    int getWickets();
     int stringToInteger(string);
 };

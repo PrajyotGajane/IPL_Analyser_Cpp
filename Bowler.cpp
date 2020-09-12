@@ -35,6 +35,11 @@ int Bowler::getFourAndFiveWickets()
     return getFourWickets() + getFiveWickets();
 }
 
+int Bowler::getWickets()
+{
+    return stringToInteger(this->wickets);
+}
+
 void Bowler::display()
 {
     cout << "Name : " << this->player << "\t";
@@ -42,7 +47,8 @@ void Bowler::display()
     cout << "   Strike Rate: " << this->strike_rate << "\t";
     cout << "   Economy : " << this->Econ << "\t";
     cout << "   4 Wkts: " << this->four_wickets << "\t";
-    cout << "   5 Wkts: " << this->five_wickets << "\n";
+    cout << "   5 Wkts: " << this->five_wickets << "\t";
+    cout << "   Total Wickets : " << this->wickets << "\n";
 }
 
 double Bowler::stringTODouble(string value_to_convert)
