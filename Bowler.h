@@ -25,6 +25,7 @@ class Bowler
 
 public:
     string *getPosition();
+    string getPlayer();
     double getAverage();
     void display();
     int getFourWickets();

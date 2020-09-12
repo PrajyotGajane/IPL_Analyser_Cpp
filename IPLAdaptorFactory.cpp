@@ -12,7 +12,7 @@ private:
     vector<T *> ipl_csv_data;
 
 public:
-    vector<T *> getIPLAdaptor(string file_path)
+    vector<T *> getIPLList(string file_path)
     {
         if (file_path == "MostRuns.csv")
         {

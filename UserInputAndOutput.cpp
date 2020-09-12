@@ -12,6 +12,7 @@ int UserInputAndOutput::selectField()
     cout << "\n10: Bowlers Strike rate and 4 and 5 Wkts";
     cout << "\n11: Bowlers Striker rate and average";
     cout << "\n12: Bowlers Wickets and average";
+    cout << "\n13: Player Batting and Bowling average";
     cout << "\n20:Exit"
          << endl;
     cout << "Your input : ";     
@@ -32,6 +33,16 @@ void UserInputAndOutput::displayBatsmanData(vector<Batsman *> ipl_data)
 }
 
 void UserInputAndOutput::displayBowlerData(vector<Bowler *> ipl_data)
+{
+    for (auto iterator = ipl_data.begin() + 1; iterator != ipl_data.begin() + 2; iterator++)
+    {
+        cout << "\n";
+        (*iterator)->display();
+        cout << "\n================================================================================================";
+    }
+}
+
+void UserInputAndOutput::displayAllRounderData(vector<AllRounder *> ipl_data)
 {
     for (auto iterator = ipl_data.begin() + 1; iterator != ipl_data.begin() + 2; iterator++)
     {

@@ -60,6 +60,10 @@ double Bowler::stringTODouble(string value_to_convert)
     return convert_to_double;
 }
 
+string Bowler::getPlayer(){
+    return this->player;
+}
+
 int Bowler::stringToInteger(string value_to_convert)
 {
     std::stringstream ss;

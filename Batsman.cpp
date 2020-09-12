@@ -22,6 +22,10 @@ string *Batsman::getPosition()
     return &this->POS;
 }
 
+string Batsman::getPlayer(){
+    return this->player;
+}
+
 double Batsman::getStrikeRate()
 {
     return stringTODouble(this->SR);

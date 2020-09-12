@@ -59,3 +59,8 @@ bool compareByAverageAndWickets(Bowler *avg_wkts_1, Bowler *avg_wkts_2)
 {
     return (avg_wkts_1->getAverage() > avg_wkts_2->getAverage()) && (avg_wkts_1->getWickets() > avg_wkts_2->getWickets());
 }
+
+bool compareByBattingBowlingAverage(AllRounder *bat_ball_avg_1, AllRounder *bat_ball_avg_2)
+{
+    return (bat_ball_avg_1->getBallingAverage() > bat_ball_avg_2->getBallingAverage()) && (bat_ball_avg_1->getBattingAverage() > bat_ball_avg_2->getBattingAverage());
+}

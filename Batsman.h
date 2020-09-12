@@ -26,6 +26,7 @@ class Batsman
 
 public:
     string *getPosition();
+    string getPlayer();
     double getAverage();
     void display();
     double stringTODouble(string);
