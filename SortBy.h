@@ -64,3 +64,8 @@ bool compareByBattingBowlingAverage(AllRounder *bat_ball_avg_1, AllRounder *bat_
 {
     return (bat_ball_avg_1->getBallingAverage() > bat_ball_avg_2->getBallingAverage()) && (bat_ball_avg_1->getBattingAverage() > bat_ball_avg_2->getBattingAverage());
 }
+
+bool compareByRunsAndWickets(AllRounder *runs_wickets_1, AllRounder *runs_wickets_2)
+{
+    return (runs_wickets_1->getRuns() > runs_wickets_2->getRuns()) && (runs_wickets_1->getWickets() > runs_wickets_2->getWickets());
+}

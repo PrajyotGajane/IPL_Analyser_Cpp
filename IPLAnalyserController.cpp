@@ -25,6 +25,7 @@ enum SortChoice
     AVERAGE_WITH_STRIKE_RATE_BOWLER,
     AVERAGE_WITH_WICKET,
     BATIING_AND_BOWLING_AVG,
+    RUNS_WICKETS,
     EXIT = 20
 };
 
@@ -154,11 +155,20 @@ public:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
                     all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
-                    ipl_all_rounder.loadAllRouderData(all_rounder_list);
-                    all_rounder_list_2 = ipl_all_rounder.getSortedDataR(&compareByBattingBowlingAverage);
+                    ipl_all_rounder.loadData(all_rounder_list);
+                    all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByBattingBowlingAverage);
                     user_input_output.displayAllRounderData(all_rounder_list);
                     break;
 
+                case RUNS_WICKETS:
+                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
+                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
+                    all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
+                    ipl_all_rounder.loadData(all_rounder_list);
+                    all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByRunsAndWickets);
+                    user_input_output.displayAllRounderData(all_rounder_list_2);
+                    break;
+                
                 case EXIT:
                     break_loop = false;
                     break;

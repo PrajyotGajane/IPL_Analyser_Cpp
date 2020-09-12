@@ -22,7 +22,8 @@ string *Batsman::getPosition()
     return &this->POS;
 }
 
-string Batsman::getPlayer(){
+string Batsman::getPlayer()
+{
     return this->player;
 }
 

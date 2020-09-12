@@ -26,14 +26,8 @@ public:
         return sorted_list;
     }
 
-    void loadAllRouderData(vector<AllRounder *> data) {
-        ipl_data = data;
-    }
-
-    vector<AllRounder *> getSortedDataR(bool (*sortFunc)(AllRounder *, AllRounder *))
+    void loadData(vector<T*> data)
     {
-        vector<AllRounder *> sorted_list = ipl_data;
-        sort(sorted_list.begin() + 1, sorted_list.end(), sortFunc);
-        return sorted_list;
+        this->ipl_data = data;
     }
 };
