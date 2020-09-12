@@ -84,7 +84,6 @@ public:
             switch (choice)
             {
                 case AVERAGE:
-                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
                     cout << "\nPlayer with highest average \n";
                     user_input_output.displayBatsmanData(sorted_batsman_list);
                     break;
@@ -120,7 +119,6 @@ public:
                     break;  
 
                 case AVERAGE_BOWLER:
-                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
                     cout << "\nBowler with highest average \n";
                     user_input_output.displayBowlerData(sorted_bowler_list); 
                     break;
@@ -168,9 +166,9 @@ public:
                     break;
 
                 case HUNDRED_AVERAGE:
-                    ipl_all_rounder.loadData(all_rounder_list);
-                    all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByHundredAndAverage);
-                    user_input_output.displayAllRounderData(all_rounder_list_2);
+                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByHundredAndAverage);
+                    cout << "\nPlayer with highest average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list);
                     break;
 
                 case EXIT:

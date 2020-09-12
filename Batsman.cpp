@@ -47,6 +47,11 @@ int Batsman::getSixes()
     return stringToInteger(this->sixes);
 }
 
+double Batsman::getHundredsAndWicket()
+{
+    return getHundreds() * getAverage();
+}
+
 int Batsman::getFoursAndSixes()
 {
     return getFours() + getSixes();

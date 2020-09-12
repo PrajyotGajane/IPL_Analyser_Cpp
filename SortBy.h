@@ -70,7 +70,7 @@ bool compareByRunsAndWickets(AllRounder *runs_wickets_1, AllRounder *runs_wicket
     return (runs_wickets_1->getRuns() > runs_wickets_2->getRuns()) && (runs_wickets_1->getWickets() > runs_wickets_2->getWickets());
 }
 
-bool compareByHundredAndAverage(AllRounder *hundreds_wickets_1, AllRounder *hundreds_wickets_2)
+bool compareByHundredAndAverage(Batsman *hundreds_wickets_1, Batsman *hundreds_wickets_2)
 {
-    return (hundreds_wickets_1->getHundreadAndAverage() > hundreds_wickets_2->getHundreadAndAverage());
+    return (hundreds_wickets_1->getHundredsAndWicket() > hundreds_wickets_2->getHundredsAndWicket());
 }
