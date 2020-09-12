@@ -21,6 +21,7 @@ enum SortChoice
     STRIKE_RATE_BOWLER,
     ECONOMY_RATE,
     STRIKE_RATE_WITH_FOURS_FIVE_WKT,
+    AVERAGE_WITH_STRIKE_RATE_BOWLER,
     EXIT = 20
 };
 
@@ -116,6 +117,13 @@ public:
                     ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRateWithFourAndFiveWickets);
                     cout << "\nBowler with highest strike rate and wickets\n";
+                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    break;
+
+                case AVERAGE_WITH_STRIKE_RATE_BOWLER:
+                    ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
+                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRateAndAverageBowler);
+                    cout << "\nBowler with highest strike rate and average\n";
                     user_input_output.displayBowlerData(sorted_bowler_list); 
                     break;
 

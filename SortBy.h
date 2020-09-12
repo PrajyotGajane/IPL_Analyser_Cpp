@@ -49,3 +49,8 @@ bool compareByStrikeRateWithFourAndFiveWickets(Bowler *sr_four_five_1, Bowler *s
 {
     return (sr_four_five_1->getFourAndFiveWickets() > sr_four_five_2->getFourAndFiveWickets()) && (sr_four_five_1->getStrikeRate() < sr_four_five_2->getStrikeRate());
 }
+
+bool compareByStrikeRateAndAverageBowler(Bowler *sr_avg_1, Bowler *sr_avg_2)
+{
+    return (sr_avg_1->getAverage() > sr_avg_2->getAverage()) && (sr_avg_1->getStrikeRate() > sr_avg_2->getStrikeRate());
+}
