@@ -14,6 +14,7 @@ int UserInputAndOutput::selectField()
     cout << "\n12: Bowlers Wickets and average";
     cout << "\n13: Player Batting and Bowling average";
     cout << "\n14: Player Runs and Wickets average";
+    cout << "\n15: Player Hundred's and Batting average";
     cout << "\n20:Exit"
          << endl;
     cout << "Your input : ";     

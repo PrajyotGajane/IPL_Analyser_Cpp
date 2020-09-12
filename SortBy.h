@@ -47,7 +47,7 @@ bool compareByEconRate(Bowler *econ_1, Bowler *econ_2)
 
 bool compareByStrikeRateWithFourAndFiveWickets(Bowler *sr_four_five_1, Bowler *sr_four_five_2)
 {
-    return (sr_four_five_1->getFourAndFiveWickets() > sr_four_five_2->getFourAndFiveWickets()) && (sr_four_five_1->getStrikeRate() < sr_four_five_2->getStrikeRate());
+    return sr_four_five_1->getStrikeRateAndFoursFives() > sr_four_five_2->getStrikeRateAndFoursFives();
 }
 
 bool compareByStrikeRateAndAverageBowler(Bowler *sr_avg_1, Bowler *sr_avg_2)
@@ -57,15 +57,20 @@ bool compareByStrikeRateAndAverageBowler(Bowler *sr_avg_1, Bowler *sr_avg_2)
 
 bool compareByAverageAndWickets(Bowler *avg_wkts_1, Bowler *avg_wkts_2)
 {
-    return (avg_wkts_1->getAverage() > avg_wkts_2->getAverage()) && (avg_wkts_1->getWickets() > avg_wkts_2->getWickets());
+    return (avg_wkts_1->getWickets() > avg_wkts_2->getWickets());
 }
 
 bool compareByBattingBowlingAverage(AllRounder *bat_ball_avg_1, AllRounder *bat_ball_avg_2)
 {
-    return (bat_ball_avg_1->getBallingAverage() > bat_ball_avg_2->getBallingAverage()) && (bat_ball_avg_1->getBattingAverage() > bat_ball_avg_2->getBattingAverage());
+    return (bat_ball_avg_1->getBattingAndBalling() > bat_ball_avg_2->getBattingAndBalling()); 
 }
 
 bool compareByRunsAndWickets(AllRounder *runs_wickets_1, AllRounder *runs_wickets_2)
 {
     return (runs_wickets_1->getRuns() > runs_wickets_2->getRuns()) && (runs_wickets_1->getWickets() > runs_wickets_2->getWickets());
+}
+
+bool compareByHundredAndAverage(AllRounder *hundreds_wickets_1, AllRounder *hundreds_wickets_2)
+{
+    return (hundreds_wickets_1->getHundreadAndAverage() > hundreds_wickets_2->getHundreadAndAverage());
 }

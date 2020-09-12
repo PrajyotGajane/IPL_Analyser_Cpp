@@ -10,7 +10,7 @@ class AllRounder
 {
     string player_name;
     double battingAverage, bowlingAverage;
-    int runs, wickets;
+    int runs, wickets, hundreds;
 
 public:
     AllRounder(Batsman *batsman, Bowler *bowler)
@@ -20,6 +20,7 @@ public:
         this->bowlingAverage = bowler->getAverage();
         this->runs = batsman->getRuns();
         this->wickets = bowler->getWickets();
+        this->hundreds = batsman->getHundreds();
     }
     void display()
     {
@@ -28,6 +29,7 @@ public:
         cout << "   Bowling Average : " << this->bowlingAverage << "\t";
         cout << "   Runs : " << this->runs << "\t";
         cout << "   Wickets : " << this->wickets << "\t";
+        cout << "   Hundreds : " << this->hundreds << "\t";
         cout << "\n";
     }
 
@@ -49,5 +51,18 @@ public:
     int getWickets()
     {
         return this->wickets;
+    }
+
+    int getHundreds()
+    {
+        return this->hundreds;
+    }
+    double getBattingAndBalling()
+    {
+        return getBattingAverage() + getBallingAverage();
+    }
+    double getHundreadAndAverage()
+    {
+        return getHundreds() * getBattingAverage();
     }
 };

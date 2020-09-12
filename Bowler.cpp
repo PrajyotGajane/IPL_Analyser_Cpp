@@ -35,6 +35,11 @@ int Bowler::getFourAndFiveWickets()
     return getFourWickets() + getFiveWickets();
 }
 
+double Bowler::getStrikeRateAndFoursFives()
+{
+    return getFourAndFiveWickets() + getStrikeRate();
+}
+
 int Bowler::getWickets()
 {
     return stringToInteger(this->wickets);
@@ -60,7 +65,8 @@ double Bowler::stringTODouble(string value_to_convert)
     return convert_to_double;
 }
 
-string Bowler::getPlayer(){
+string Bowler::getPlayer()
+{
     return this->player;
 }
 

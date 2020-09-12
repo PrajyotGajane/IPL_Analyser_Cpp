@@ -35,5 +35,6 @@ public:
     double stringTODouble(string);
     double getEconRate();
     int getWickets();
+    double getStrikeRateAndFoursFives();
     int stringToInteger(string);
 };

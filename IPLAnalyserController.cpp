@@ -26,6 +26,7 @@ enum SortChoice
     AVERAGE_WITH_WICKET,
     BATIING_AND_BOWLING_AVG,
     RUNS_WICKETS,
+    HUNDRED_AVERAGE,
     EXIT = 20
 };
 
@@ -73,6 +74,9 @@ public:
     {  
         ipl_batsman_analyser.loadIPLData(BATSMAN_FILE_PATH);
         ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
+        sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
+        sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
+        all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
         bool break_loop = true;
         while (break_loop)
         {
@@ -152,23 +156,23 @@ public:
                     break;    
 
                 case BATIING_AND_BOWLING_AVG:
-                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
-                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
-                    all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
                     ipl_all_rounder.loadData(all_rounder_list);
                     all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByBattingBowlingAverage);
                     user_input_output.displayAllRounderData(all_rounder_list);
                     break;
 
                 case RUNS_WICKETS:
-                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
-                    sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
-                    all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
                     ipl_all_rounder.loadData(all_rounder_list);
                     all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByRunsAndWickets);
                     user_input_output.displayAllRounderData(all_rounder_list_2);
                     break;
-                
+
+                case HUNDRED_AVERAGE:
+                    ipl_all_rounder.loadData(all_rounder_list);
+                    all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByHundredAndAverage);
+                    user_input_output.displayAllRounderData(all_rounder_list_2);
+                    break;
+
                 case EXIT:
                     break_loop = false;
                     break;

@@ -37,6 +37,11 @@ int Batsman::getFours()
     return stringToInteger(this->fours);
 }
 
+int Batsman::getHundreds()
+{
+    return stringToInteger(this->hundreds);
+}
+
 int Batsman::getSixes()
 {
     return stringToInteger(this->sixes);

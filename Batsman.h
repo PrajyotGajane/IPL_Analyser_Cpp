@@ -33,6 +33,7 @@ public:
     int stringToInteger(string);
     int getFours();
     int getSixes();
+    int getHundreds();
     double getStrikeRate();
     int getFoursAndSixes();
     int getRuns();
