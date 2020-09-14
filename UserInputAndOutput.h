@@ -9,7 +9,8 @@ class UserInputAndOutput
 {
 public:
     int selectField();
-    void displayBatsmanData(vector<Batsman *>);
-    void displayBowlerData(vector<Bowler *>);
-    void displayAllRounderData(vector<AllRounder *>);
+    void displayBatsmanData(vector<Batsman *>, string message);
+    void displayBowlerData(vector<Bowler *>, string message);
+    void displayAllRounderData(vector<AllRounder *>, string message);
+    void displayWelcomeMessage();
 };

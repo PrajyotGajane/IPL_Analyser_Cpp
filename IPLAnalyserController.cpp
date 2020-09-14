@@ -31,13 +31,6 @@ enum SortChoice
     EXIT = 20
 };
 
-void displayWelcomeMessage()
-{
-    system("clear");
-    cout << "Welcome to IPL Analyser"
-         << "\n";
-}
-
 vector<AllRounder* > getAllRounderData(vector<Batsman *> batsman, vector<Bowler *> bowler)
 {
     vector<AllRounder*> data;

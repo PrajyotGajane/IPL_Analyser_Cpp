@@ -25,8 +25,9 @@ int UserInputAndOutput::selectField()
     return choice;
 }
 
-void UserInputAndOutput::displayBatsmanData(vector<Batsman *> ipl_data)
+void UserInputAndOutput::displayBatsmanData(vector<Batsman *> ipl_data, string message)
 {
+    cout << message;
     for (auto iterator = ipl_data.begin() + 1; iterator != ipl_data.begin() + 2; iterator++)
     {
         cout << "\n";
@@ -35,8 +36,9 @@ void UserInputAndOutput::displayBatsmanData(vector<Batsman *> ipl_data)
     }
 }
 
-void UserInputAndOutput::displayBowlerData(vector<Bowler *> ipl_data)
+void UserInputAndOutput::displayBowlerData(vector<Bowler *> ipl_data, string message)
 {
+    cout << message;
     for (auto iterator = ipl_data.begin() + 1; iterator != ipl_data.begin() + 2; iterator++)
     {
         cout << "\n";
@@ -45,12 +47,20 @@ void UserInputAndOutput::displayBowlerData(vector<Bowler *> ipl_data)
     }
 }
 
-void UserInputAndOutput::displayAllRounderData(vector<AllRounder *> ipl_data)
+void UserInputAndOutput::displayAllRounderData(vector<AllRounder *> ipl_data, string message)
 {
+    cout << message;
     for (auto iterator = ipl_data.begin() + 1; iterator != ipl_data.begin() + 2; iterator++)
     {
         cout << "\n";
         (*iterator)->display();
         cout << "\n================================================================================================";
     }
+}
+
+void UserInputAndOutput::displayWelcomeMessage()
+{
+    system("clear");
+    cout << "Welcome to IPL Analyser"
+         << "\n";
 }
