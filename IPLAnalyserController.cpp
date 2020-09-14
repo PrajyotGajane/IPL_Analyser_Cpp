@@ -66,109 +66,113 @@ public:
     IPLAnalyserController(){}
     void performTask()
     {  
+        user_input_output.displayWelcomeMessage();
         ipl_batsman_analyser.loadIPLData(BATSMAN_FILE_PATH);
         ipl_bowler_analyser.loadIPLData(BOWLER_FILE_PATH);
         sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverage);
         sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareBowlerByAverage);
         all_rounder_list = getAllRounderData(sorted_batsman_list,sorted_bowler_list);
         bool break_loop = true;
+        string message;
         while (break_loop)
         {
             choice = user_input_output.selectField();
             switch (choice)
             {
                 case AVERAGE:
-                    cout << "\nPlayer with highest average \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);
+                    message = "\nPlayer with highest average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);
                     break;
 
                 case STRIKE_RATE:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByStrikeRate);
-                    cout << "\nPlayer with highest strike rate \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);
+                    message = "\nPlayer with highest strike rate \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);
                     break;
 
                 case FOURS_AND_SIXES:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByFoursAndSixes);
-                    cout << "\nPlayer with highest Fours and Sixes \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);
+                    message = "\nPlayer with highest Fours and Sixes \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);
                     break;
 
                 case STRIKE_RATE_WITH_FOURS_SIXES:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByStrikeRateWithFourAndSix);
-                    cout << "\nPlayer with highest Strike rate along with Fours and Sixes \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);   
+                    message = "\nPlayer with highest Strike rate along with Fours and Sixes \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);   
                     break;
 
                 case AVERAGE_WITH_STRIKE_RATE:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByAverageWithStrikeRate);
-                    cout << "\nPlayer with highest Average along with Strike rate \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);   
+                    message = "\nPlayer with highest Average along with Strike rate \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);   
                     break;   
 
                 case RUNS_WITH_AVERAGE:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareRunsWithAverage);
-                    cout << "\nPlayer with highest Runs along with average \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);   
+                    message = "\nPlayer with highest Runs along with average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);   
                     break;  
 
                 case ZERO_HUN_FIF:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareZeroHunFiftiesWithAverage);
-                    cout << "\nPlayer with Zero Hundreds and Fifties along with average \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);   
+                    message = "\nPlayer with Zero Hundreds and Fifties along with average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);   
                     break;
 
                 case AVERAGE_BOWLER:
-                    cout << "\nBowler with highest average \n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest average \n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;
 
                 case STRIKE_RATE_BOWLER:
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRate);
-                    cout << "\nBowler with highest strike rate \n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest strike rate \n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;
 
                 case ECONOMY_RATE:
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByEconRate);
-                    cout << "\nBowler with highest economy rate \n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest economy rate \n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;
 
                 case STRIKE_RATE_WITH_FOURS_FIVE_WKT:
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRateWithFourAndFiveWickets);
-                    cout << "\nBowler with highest strike rate and wickets\n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest strike rate and wickets\n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;
 
                 case AVERAGE_WITH_STRIKE_RATE_BOWLER:
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByStrikeRateAndAverageBowler);
-                    cout << "\nBowler with highest strike rate and average\n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest strike rate and average\n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;
 
                 case AVERAGE_WITH_WICKET:
                     sorted_bowler_list = ipl_bowler_analyser.getSortedData(&compareByAverageAndWickets);
-                    cout << "\nBowler with highest strike rate and average\n";
-                    user_input_output.displayBowlerData(sorted_bowler_list); 
+                    message = "\nBowler with highest strike rate and average\n";
+                    user_input_output.displayBowlerData(sorted_bowler_list, message); 
                     break;    
 
                 case BATIING_AND_BOWLING_AVG:
                     ipl_all_rounder.loadData(all_rounder_list);
                     all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByBattingBowlingAverage);
-                    user_input_output.displayAllRounderData(all_rounder_list);
+                    message = "\nPlayer with highest batting and bowling average\n";
+                    user_input_output.displayAllRounderData(all_rounder_list, message);
                     break;
 
                 case RUNS_WICKETS:
                     ipl_all_rounder.loadData(all_rounder_list);
                     all_rounder_list_2 = ipl_all_rounder.getSortedData(&compareByRunsAndWickets);
-                    user_input_output.displayAllRounderData(all_rounder_list_2);
+                    message = "\nPlayer with highest Runs and wickets\n";
+                    user_input_output.displayAllRounderData(all_rounder_list_2, message);
                     break;
 
                 case HUNDRED_AVERAGE:
                     sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareByHundredAndAverage);
-                    cout << "\nPlayer with highest average \n";
-                    user_input_output.displayBatsmanData(sorted_batsman_list);
+                    message = "\nPlayer with highest average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list, message);
                     break;
 
                 case EXIT:
@@ -185,7 +189,6 @@ public:
 
 int main()
 {
-    displayWelcomeMessage();
     IPLAnalyserController controller;
     controller.performTask();
 }
