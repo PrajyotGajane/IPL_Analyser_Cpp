@@ -71,6 +71,11 @@ double Batsman::stringTODouble(string value_to_convert)
     return convert_to_double;
 }
 
+int Batsman::getFifties()
+{
+    return stringToInteger(this->fifties);
+}
+
 int Batsman::stringToInteger(string value_to_convert)
 {
     std::stringstream ss;

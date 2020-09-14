@@ -27,6 +27,7 @@ enum SortChoice
     BATIING_AND_BOWLING_AVG,
     RUNS_WICKETS,
     HUNDRED_AVERAGE,
+    ZERO_HUN_FIF,
     EXIT = 20
 };
 
@@ -117,6 +118,12 @@ public:
                     cout << "\nPlayer with highest Runs along with average \n";
                     user_input_output.displayBatsmanData(sorted_batsman_list);   
                     break;  
+
+                case ZERO_HUN_FIF:
+                    sorted_batsman_list = ipl_batsman_analyser.getSortedData(&compareZeroHunFiftiesWithAverage);
+                    cout << "\nPlayer with Zero Hundreds and Fifties along with average \n";
+                    user_input_output.displayBatsmanData(sorted_batsman_list);   
+                    break;
 
                 case AVERAGE_BOWLER:
                     cout << "\nBowler with highest average \n";

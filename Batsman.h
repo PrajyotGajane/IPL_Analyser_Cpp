@@ -37,5 +37,6 @@ public:
     double getStrikeRate();
     double getHundredsAndWicket();
     int getFoursAndSixes();
+    int getFifties();
     int getRuns();
 };

@@ -10,7 +10,7 @@ class AllRounder
 {
     string player_name;
     double battingAverage, bowlingAverage;
-    int runs, wickets, hundreds;
+    int runs, wickets, hundreds, fifties;
 
 public:
     AllRounder(Batsman *batsman, Bowler *bowler)
@@ -21,6 +21,7 @@ public:
         this->runs = batsman->getRuns();
         this->wickets = bowler->getWickets();
         this->hundreds = batsman->getHundreds();
+        this->fifties = batsman->getFifties();
     }
     void display()
     {
@@ -61,6 +62,12 @@ public:
     {
         return getBattingAverage() + getBallingAverage();
     }
+
+    double getFifties()
+    {
+        return this->fifties;
+    }
+
     double getHundreadAndAverage()
     {
         return getHundreds() * getBattingAverage();

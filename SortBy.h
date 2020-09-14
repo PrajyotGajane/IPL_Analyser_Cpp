@@ -62,7 +62,7 @@ bool compareByAverageAndWickets(Bowler *avg_wkts_1, Bowler *avg_wkts_2)
 
 bool compareByBattingBowlingAverage(AllRounder *bat_ball_avg_1, AllRounder *bat_ball_avg_2)
 {
-    return (bat_ball_avg_1->getBattingAndBalling() > bat_ball_avg_2->getBattingAndBalling()); 
+    return (bat_ball_avg_1->getBattingAndBalling() > bat_ball_avg_2->getBattingAndBalling());
 }
 
 bool compareByRunsAndWickets(AllRounder *runs_wickets_1, AllRounder *runs_wickets_2)
@@ -73,4 +73,22 @@ bool compareByRunsAndWickets(AllRounder *runs_wickets_1, AllRounder *runs_wicket
 bool compareByHundredAndAverage(Batsman *hundreds_wickets_1, Batsman *hundreds_wickets_2)
 {
     return (hundreds_wickets_1->getHundredsAndWicket() > hundreds_wickets_2->getHundredsAndWicket());
+}
+
+enum Score
+{
+    FIFTIES = 50,
+    HUNDREDS = 100
+};
+
+bool compareZeroHunFiftiesWithAverage(Batsman *hundreds_wickets_1, Batsman *hundreds_wickets_2)
+{
+    if (hundreds_wickets_1->getFifties() == FIFTIES && hundreds_wickets_2->getFifties() == FIFTIES)
+    {
+        if (hundreds_wickets_1->getHundreds() == HUNDREDS && hundreds_wickets_2->getHundreds() == HUNDREDS)
+        {
+            return (hundreds_wickets_1->getAverage() > hundreds_wickets_2->getAverage());
+        }
+    }
+    return false;
 }
