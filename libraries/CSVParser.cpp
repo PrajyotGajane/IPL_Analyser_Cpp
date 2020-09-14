@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 template <class T>
@@ -11,7 +12,8 @@ public:
     vector<T *> readDataFromFile(string filePath)
     {
         vector<T *> List;
-        ifstream theFile(filePath);
+        ifstream theFile;
+        theFile.open(filePath, ios::in);
         string line;
         while (getline(theFile, line))
         {

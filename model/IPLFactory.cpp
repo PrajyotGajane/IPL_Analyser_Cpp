@@ -14,12 +14,12 @@ private:
 public:
     vector<T *> getIPLList(string file_path)
     {
-        if (file_path == "MostRuns.csv")
+        if (file_path == "C:/Users/Home/Desktop/Visual Studio Projects/IPL_Analyser_Cpp/resources/MostRuns.csv")
         {
             CSVParser<T> csv_parser_obj;
             ipl_csv_data = csv_parser_obj.readDataFromFile(file_path);
         }
-        else if ( file_path == "MostWkts.csv")
+        else if ( file_path == "C:/Users/Home/Desktop/Visual Studio Projects/IPL_Analyser_Cpp/resources/MostWkts.csv")
         {
             CSVParser<T> csv_parser_obj;
             ipl_csv_data = csv_parser_obj.readDataFromFile(file_path);

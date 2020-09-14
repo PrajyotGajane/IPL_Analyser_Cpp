@@ -7,8 +7,8 @@
 
 using namespace std;
 
-string BATSMAN_FILE_PATH = "MostRuns.csv";
-string BOWLER_FILE_PATH = "MostWkts.csv";
+string BATSMAN_FILE_PATH =  "C:/Users/Home/Desktop/Visual Studio Projects/IPL_Analyser_Cpp/resources/MostRuns.csv";
+string BOWLER_FILE_PATH = "C:/Users/Home/Desktop/Visual Studio Projects/IPL_Analyser_Cpp/resources/MostWkts.csv";
 
 enum SortChoice
 {
