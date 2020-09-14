@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "Batsman.h"
-#include "Bowler.h"
-#include "AllRounder.h"
+#include "../model/Batsman.h"
+#include "../model/Bowler.h"
+#include "../model/AllRounder.h"
 
 class UserInputAndOutput
 {

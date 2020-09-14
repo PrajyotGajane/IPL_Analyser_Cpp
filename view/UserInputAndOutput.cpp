@@ -1,5 +1,4 @@
 #include "UserInputAndOutput.h"
-
 using namespace std;
 
 int UserInputAndOutput::selectField()

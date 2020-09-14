@@ -1,8 +1,8 @@
 #include <iostream>
-#include "IPLAnalyser.cpp"
-#include "UserInputAndOutput.h"
-#include "ALLRounder.h"
-#include "SortBy.h"
+#include "../model/IPLAnalyser.cpp"
+#include "../view/UserInputAndOutput.h"
+#include "../model/AllRounder.h"
+#include "../model/SortBy.h"
 #include <vector>
 
 using namespace std;
